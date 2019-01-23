@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     EditText editText;
     Button button;
     TextView textView;
-
+    int i=3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +21,11 @@ public class MainActivity extends AppCompatActivity {
         editText = findViewById(R.id.editText2);
         button = findViewById(R.id.button);
         textView = findViewById(R.id.textView);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    Integer i=3;
+
                 String pass1 = new String("vaishali");
                     String pass = editText.getText().toString();
                     if (pass.equals(pass1))
@@ -34,11 +35,12 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else
                         {
+                            pass = editText.getText().toString();
                         textView.setText("Warning!!! \n attempt left: " + i);
                         i = i-1;
                         if (i == 0)
                         {
-
+                            button.setEnabled(false);
                             textView.setText("sorry");
                         }
                     }
