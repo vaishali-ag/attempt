@@ -23,23 +23,29 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Integer i ;
-                for (i=1;i<=3;i++)
+                    Integer i=1;
+                String pass1 = new String("vaishali");
+                    do {
+                String pass = editText.getText().toString();
+
+                if(pass.equals(pass1))
                 {
-                    String pass = editText.getText().toString();
-                    if(pass == "vaishali")
-                    {
-                        textView.setText("welcome!!!\n ");
-                      break;
-
-                    }
-                    else
-                    {
-                        textView.setText("Warning!!! \n attempt left "+i);
-                    }
-
+                    textView.setText("welcome!!!\n ");
+                    break;
                 }
+                else
+                {
+                    textView.setText("Warning!!! \n attempt left "+i);
+                i=i+1;
+                }
+                 }while(i<=3);
+
+
             }
+
+
+
+
         });
 
     }
