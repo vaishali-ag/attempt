@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText editText;
@@ -23,25 +24,31 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    Integer i=1;
+                    Integer i=3;
                 String pass1 = new String("vaishali");
-                    do {
-                String pass = editText.getText().toString();
+                    String pass = editText.getText().toString();
+                    if (pass.equals(pass1))
+                    {
+                        textView.setText("welcome!!!\n ");
 
-                if(pass.equals(pass1))
-                {
-                    textView.setText("welcome!!!\n ");
-                    break;
-                }
-                else
-                {
-                    textView.setText("Warning!!! \n attempt left "+i);
-                i=i+1;
-                }
-                 }while(i<=3);
+                    }
+                    else
+                        {
+                        textView.setText("Warning!!! \n attempt left: " + i);
+                        i = i-1;
+                        if (i == 0)
+                        {
+
+                            textView.setText("sorry");
+                        }
+                    }
+
 
 
             }
+
+
+
 
 
 
